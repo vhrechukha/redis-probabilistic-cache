@@ -1,0 +1,30 @@
+services:
+  redis-master:
+    image: redis:latest
+    container_name: redis-master
+    command: redis-server --appendonly yes
+    networks:
+      - redis-cluster
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-master-data:/data
+
+  redis-slave:
+    image: redis:latest
+    container_name: redis-slave
+    command: redis-server --slaveof redis-master 6379 --appendonly yes
+    networks:
+      - redis-cluster
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis-slave-data:/data
+
+networks:
+  redis-cluster:
+    driver: bridge
+
+volumes:
+  redis-master-data:
+  redis-slave-data:

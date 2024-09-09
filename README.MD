@@ -8,7 +8,7 @@
 
 ## Analysis of Results
 
-1. `volatile-lru`
+1. `volatile-lru`<br>
 Evicts least recently used keys with TTL, effective in reducing memory usage. <br>
 <br>
 Testing eviction policy: volatile-lru <br>
@@ -20,7 +20,7 @@ Final key count: 3830 <br>
 Memory usage change: 10056 bytes <br>
 Key count change: -18165 <br>
 
-2. `allkeys-lru`
+2. `allkeys-lru`<br>
 Evicts least recently used keys across all keys, moderate reduction in key count. <br>
 <br>
 Testing eviction policy: allkeys-lru <br>
@@ -32,7 +32,7 @@ Final key count: 382 <br>
 Memory usage change: -16848 bytes <br>
 Key count change: -3448 <br>
 
-3. `volatile-lfu`
+3. `volatile-lfu`<br>
 Evicts least frequently used keys with TTL, slight impact on memory usage.<br>
 <br>
 Testing eviction policy: volatile-lfu <br>
@@ -44,7 +44,7 @@ Final key count: 382 <br>
 Memory usage change: -1024 bytes <br>
 Key count change: 0 <br>
 
-4. `allkeys-lfu`
+4. `allkeys-lfu`<br>
 Evicts least frequently used keys across all keys, varies depending on access patterns.<br>
 <br>
 Testing eviction policy: allkeys-lfu <br>
@@ -56,7 +56,7 @@ Final key count: 382 <br>
 Memory usage change: 21528 bytes <br>
 Key count change: 0 <br>
 
-5. `volatile-random`
+5. `volatile-random`<br>
 Randomly evicts keys with TTL, moderate memory reduction.<br>
 <br>
 Testing eviction policy: volatile-random <br>
@@ -68,7 +68,7 @@ Final key count: 382 <br>
 Memory usage change: -20520 bytes <br>
 Key count change: 0 <br>
 
-6. `allkeys-random`
+6. `allkeys-random`<br>
 Randomly evicts keys across all keys, minor memory changes.<br>
 <br>
 Testing eviction policy: allkeys-random <br>
@@ -80,7 +80,7 @@ Final key count: 382 <br>
 Memory usage change: -1008 bytes <br>
 Key count change: 0 <br>
 
-7. `volatile-ttl`
+7. `volatile-ttl`<br>
 Evicts keys closest to expiration, may increase memory usage slightly due to key replacements.<br>
 <br>
 Testing eviction policy: volatile-ttl <br>
@@ -92,7 +92,7 @@ Final key count: 382 <br>
 Memory usage change: 1104 bytes <br>
 Key count change: 0 <br>
 
-8. `noeviction`
+8. `noeviction`<br>
 Prevents any evictions, may result in OOM errors when memory is full.<br>
 <br>
 Testing eviction policy: noeviction <br>
